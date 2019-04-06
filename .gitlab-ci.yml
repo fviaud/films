@@ -1,5 +1,4 @@
 variables:
- PROJET: objets
  REGISTRY_IMAGE: ${CI_REGISTRY_IMAGE}:${CI_BUILD_REF_NAME}
  
 stages:
@@ -35,5 +34,5 @@ deployement:
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
   script:
-    - ssh -t -o StrictHostKeyChecking=no ubuntu@${IP_AWS} "sudo docker rm -f ${PROJET} || true && sudo docker login -u $CI_DEPLOY_USER -p $CI_DEPLOY_PASSWORD $CI_REGISTRY && sudo docker pull ${REGISTRY_IMAGE} && sudo docker run -d --rm --name ${PROJET} -p 80:3000 ${REGISTRY_IMAGE}"
+    - ssh -t -o StrictHostKeyChecking=no ubuntu@${IP_AWS} "sudo docker rm -f $CI_PROJECT_NAME || true && sudo docker login -u $CI_DEPLOY_USER -p $CI_DEPLOY_PASSWORD $CI_REGISTRY && sudo docker pull ${REGISTRY_IMAGE} && sudo docker run -d --rm --name $CI_PROJECT_NAME -p 80:3000 ${REGISTRY_IMAGE}"
     - ssh -t -o StrictHostKeyChecking=no ubuntu@${IP_AWS} "docker ps"
