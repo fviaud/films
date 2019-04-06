@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Header } from './components';
 import Films from './features/films';
-import Favoris from './features/favoris';
+//import Favoris from './features/favoris';
 import apiMovie, { apiMovieMap } from './conf/api.movie';
 import apiFirebase from './conf/api.firebase';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
@@ -99,7 +99,8 @@ class App extends Component {
                 />
               )
             }} />
-            {/* <Route path="/favoris" render={ (props) => {
+{/* 
+            <Route path="/favoris" render={ (props) => {
               return (
                 <Favoris 
                   { ...props } 
@@ -108,7 +109,8 @@ class App extends Component {
                   removeFavori={ this.removeFavori }
                 />
               )
-            }} /> */}
+            }} />
+             */}
             <Redirect to="/films" />
           </Switch>
          
