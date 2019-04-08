@@ -4,7 +4,7 @@ import MovieElement from './MovieElement/MovieElement';
 export default class MovieList extends Component {
   render() {
     return (
-        <ul>
+        <ul className="list-group list-group-flush">
         { this.props.movies.map( (m, index) => (
           <MovieElement 
             key={ m.title + index } 
