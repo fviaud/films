@@ -1,5 +1,5 @@
 import React from 'react';
-import { MovieList, MovieDetails, SearchBar } from './components';
+import { MovieList, SearchBar } from './components';
 import Loading from '../../components/utils/Loading';
 
 export default (props) => {
@@ -14,9 +14,6 @@ export default (props) => {
             favoris={ props.favoris.map( f => f.title ) }
             removeFavori={ props.removeFavori }
             addFavori={ props.addFavori }
-          />
-          <MovieDetails 
-            movie={ props.movies[props.selectedMovie] }
           />
         </div>
       ) : (

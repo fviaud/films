@@ -5,22 +5,10 @@ export default class Header extends Component {
   render() {
     return (
       <header className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/">AlloMovie</a><span>tag</span>
-        <button className="navbar-toggler">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <NavLink to="/films" className="nav-link" activeClassName="active" > Home </NavLink>
-            </li>
-{/* 
-            <li className="nav-item">
-              <NavLink to="/favoris" className="nav-link" activeClassName="active"> Favoris </NavLink>
-            </li>
-             */}
-          </ul>
-        </div>
+        <a className="navbar-brand" href="/">AlloMovie tag</a>
+        <NavLink to="/films" className="nav-link" activeClassName="active" class='right'> Home </NavLink>
+        <NavLink to="/favoris" className="nav-link" activeClassName="active" class='right'> Favoris</NavLink>
+        
       </header>
     );
   }

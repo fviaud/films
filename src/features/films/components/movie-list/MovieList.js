@@ -4,7 +4,7 @@ import MovieElement from './MovieElement/MovieElement';
 export default class MovieList extends Component {
   render() {
     return (
-      <div className="w-75 d-flex flex-row flex-wrap justify-content-center">
+        <ul>
         { this.props.movies.map( (m, index) => (
           <MovieElement 
             key={ m.title + index } 
@@ -15,7 +15,7 @@ export default class MovieList extends Component {
             updateSelectedMovie={ () => { this.props.updateSelectedMovie(index) } } 
           />
         ))}
-      </div>
+       </ul>
     );
   }
 

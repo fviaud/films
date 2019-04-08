@@ -4,7 +4,7 @@ import FavoriElement from './FavoriElement/FavoriElement';
 export default class FavoriList extends Component {
   render() {
     return (
-      <div className="w-75 d-flex flex-row flex-wrap justify-content-center">
+      <ul>
         { this.props.favoris.map( (f, index) => (
           <FavoriElement 
             key={ f.title + index } 
@@ -12,7 +12,7 @@ export default class FavoriList extends Component {
             removeFavori={ this.props.removeFavori }
           />
         ))}
-      </div>
+      </ul>
     );
   }
 
