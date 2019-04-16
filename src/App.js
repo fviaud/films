@@ -31,7 +31,7 @@ class App extends Component {
             })
             .catch( err => console.log(err));
 
-    apiFirebase.get('favoris.json')
+    apiFirebase.get('films.json')
                .then( response => {
                 let favoris = response.data ? response.data : [];
                 this.updateFavori(favoris)
@@ -75,7 +75,7 @@ class App extends Component {
   }
 
   saveFavoris = () => {
-    apiFirebase.put('favoris.json', this.state.favoris);
+    apiFirebase.put('films.json', this.state.favoris);
   }
 
   render() {
@@ -99,6 +99,7 @@ class App extends Component {
                 />
               )
             }} />
+
             <Route path="/favoris" render={ (props) => {
               return (
                 <Favoris 
@@ -109,6 +110,7 @@ class App extends Component {
                 />
               )
             }} />
+             
             <Redirect to="/films" />
           </Switch>
          
