@@ -5,6 +5,7 @@ import Favoris from './features/favoris';
 import apiMovie, { apiMovieMap } from './conf/api.movie';
 import apiFirebase from './conf/api.firebase';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+
 class App extends Component {
   constructor(props) {
     super(props);
